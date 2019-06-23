@@ -1,0 +1,46 @@
+﻿@model IEnumerable<Account>
+@using Microsoft.AspNetCore.Http;
+@{
+    ViewData["Title"] = "Panel";
+}
+
+<h2>Panel</h2>
+
+<br>
+<a asp-controller="Home" asp-action="Logout">Wyloguj</a>
+<a asp-controller="Home" asp-action="AddAccount">Dodaj konto</a>
+
+<table class="table table-bordered table-sm table-striped">
+    <thead>
+        <tr>
+
+            <th>Nr Konta</th>
+            <th>Balans</th>
+            <th>Bank</th>
+            <th>Edytuj</th>
+            <th>Usun</th>
+        </tr>
+    </thead>
+    <
+    <tbody>
+
+        @foreach (var p in Model)
+        {
+            <tr>
+                <td><a asp-controller="Home" asp-action="Account" asp-route-number="@p.NumberOfAccount" asp-for="NumberOfAccount">@p.NumberOfAccount </a></td>
+                <td>@p.Balance</td>
+                <td>@p.Bank</td>
+                <td> <a asp-controller="Home" asp-action="UpAccount" asp-route-number="@p.IdA" asp-for="IdI">Edytuj </a></td>
+                <td> <a asp-controller="Home" asp-action="DelAccount" asp-route-number="@p.IdA" asp-for="IdI">Usun </a></td>
+            </tr>
+        }
+        <tr>
+            <td></td>
+            <td>@ViewBag.sum</td>
+            <td></td>
+            <td></td>
+        </tr>
+    </tbody>
+</table>
+
+

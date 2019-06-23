@@ -1,0 +1,14 @@
+﻿@using Microsoft.AspNetCore.Http;
+@{
+    ViewData["Title"] = "Account";
+}
+@TempData["test"]
+@Context.Session.GetString("numberacc")
+@Context.Session.GetString("username")
+<h2>Konto</h2>
+<a asp-controller="Home" asp-action="Panel">Panel</a>
+
+<a asp-controller="Home" asp-action="Credit">Kredyty</a>
+<a asp-controller="Home" asp-action="Deposit">Lokaty</a>
+<a asp-controller="Home" asp-action="Expense">Wydatki</a>
+<a asp-controller="Home" asp-action="Income">Przychod</a>

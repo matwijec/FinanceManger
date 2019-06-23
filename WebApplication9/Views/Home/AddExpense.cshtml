@@ -1,0 +1,20 @@
+﻿using Microsoft.AspNetCore.Http;
+@model WebApplication9.Models.Expense
+
+@{
+    ViewData["Title"] = "AddExpense";
+
+}
+
+<br>
+<form asp-action="AddExpense" asp-controller="Home">
+    <label asp-for="Amount">Kwota</label>
+    <input asp-for="Amount" placeholder="Kwota" />
+    <label asp-for="Category">Kategoria</label>
+    <input asp-for="Category" placeholder="Kategoria" />
+    <label asp-for="Datee">Data</label>
+    <input type="date" asp-for="Datee" placeholder="Data" />
+    <label asp-for="Description">OPIS</label>
+    <input asp-for="Description" placeholder="OPIS" />
+    <input type="submit" />
+</form>

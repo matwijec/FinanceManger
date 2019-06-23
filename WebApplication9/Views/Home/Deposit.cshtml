@@ -1,0 +1,35 @@
+﻿@model IEnumerable<Deposit>
+@{
+    ViewData["Title"] = "Deposit";
+}
+
+<h2>Deposit</h2>
+<a asp-controller="Home" asp-action="AddDeposit">Dodaj Lokate</a>
+
+<table class="table table-bordered table-sm table-striped">
+    <thead>
+        <tr>
+
+            <th>Nazwa</th>
+            <th>Kwota</th>
+            <th>Kwota do spłacenia</th>
+            <th>Procent</th>
+            <th>Edytuj</th>
+            <th>Usun</th>
+        </tr>
+    </thead>
+    <
+    <tbody>
+        @foreach (var p in Model)
+        {
+            <tr>
+                <td>@p.Amount</td>
+                <td>@p.LendingRate</td>
+                <td>@p.DateOfStart</td>
+                <td>@p.DateOfEnd</td>
+                <td> <a asp-controller="Home" asp-action="UpDeposit" asp-route-number="@p.IdD" asp-for="IdD">Edytuj </a></td>
+                <td> <a asp-controller="Home" asp-action="DelDeposit" asp-route-number="@p.IdD" asp-for="IdD">Usun </a></td>
+            </tr>
+        }
+    </tbody>
+    </table>

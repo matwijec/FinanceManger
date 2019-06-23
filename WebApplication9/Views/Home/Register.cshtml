@@ -1,0 +1,15 @@
+﻿@model WebApplication9.Models.User
+@{
+    ViewData["Title"] = "Register";
+}
+
+<h2>Register</h2>
+<a asp-controller="Home" asp-action="Login">Login</a>
+
+<form asp-action="Register" asp-controller="Home">
+    <label asp-for="Email"></label>
+    <input asp-for="Email" placeholder="Email" />
+    <label asp-for="Password"></label>
+    <input asp-for="Password" type="password" />
+    <input type="submit" />
+</form>

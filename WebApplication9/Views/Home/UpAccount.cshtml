@@ -1,0 +1,17 @@
+﻿@model WebApplication9.Models.Account
+@{
+    ViewData["Title"] = "UpAccount";
+}
+
+<h2>AddAccount</h2>
+
+
+<form asp-action="UpAccount" asp-controller="Home">
+    <label asp-for="Bank"></label>
+    <input asp-for="Bank" placeholder="Bank" />
+    <label asp-for="NumberOfAccount"></label>
+    <input asp-for="NumberOfAccount" placeholder="Numer konta" />
+    <label asp-for="Balance"></label>
+    <input asp-for="Balance" placeholder="Saldo" />
+    <input type="submit" />
+</form>

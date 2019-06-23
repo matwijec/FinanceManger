@@ -1,0 +1,37 @@
+﻿@model IEnumerable<Credit>
+@{
+    ViewData["Title"] = "Credit";
+}
+
+<h2>Lista kredytów</h2>
+
+<a asp-controller="Home" asp-action="AddCredit">Dodaj kredyt</a>
+
+
+<table class="table table-bordered table-sm table-striped">
+    <thead>
+        <tr>
+
+            <th>Nazwa</th>
+            <th>Kwota</th>
+            <th>Kwota do spłacenia</th>
+            <th>Procent</th>
+            <th>Edytuj</th>
+            <th>Usun</th>
+        </tr>
+    </thead>
+    <<tbody>
+    @foreach (var p in Model)
+    {
+         <tr>
+             <td>@p.Name</td>
+             <td>@p.Amount</td>
+             <td>@p.AmountLeft</td>
+             <td>@p.LendingRate</td>
+             <td> <a asp-controller="Home" asp-action="UpCredit" asp-route-number="@p.IdC" asp-for="IdC">Edytuj </a></td>
+             <td> <a asp-controller="Home" asp-action="DelCredit" asp-route-number="@p.IdC" asp-for="IdC">Usun </a></td>
+         </tr>
+    }
+    </tbody>
+
+</table>

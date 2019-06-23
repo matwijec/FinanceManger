@@ -1,0 +1,35 @@
+﻿@model IEnumerable<Expense>
+@{
+    ViewData["Title"] = "Expense";
+}
+
+<h2>Wydatki</h2>
+<a asp-controller="Home" asp-action="AddExpense">Dodaj wydatek</a>
+
+<table class="table table-bordered table-sm table-striped">
+    <thead>
+        <tr>
+
+            <th>Kwota</th>
+            <th>Kategoria</th>
+            <th>Data</th>
+            <th>Opis</th>
+            <th>Edytuj</th>
+            <th>Usun</th>
+        </tr>
+    </thead>
+    <
+    <tbody>
+        @foreach (var p in Model)
+        {
+            <tr>
+                <td>@p.Amount</td>
+                <td>@p.Category</td>
+                <td>@p.Datee</td>
+                <td>@p.Description</td>
+                <td> <a asp-controller="Home" asp-action="UpExpense" asp-route-number="@p.IdE" asp-for="IdE">Edytuj </a></td>
+                <td> <a asp-controller="Home" asp-action="DelExpense" asp-route-number="@p.IdE" asp-for="IdE">Usun </a></td>
+            </tr>
+        }
+    </tbody>
+</table>

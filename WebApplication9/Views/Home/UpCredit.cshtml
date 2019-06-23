@@ -1,0 +1,20 @@
+﻿@using Microsoft.AspNetCore.Http;
+@model WebApplication9.Models.Credit
+
+@{
+    ViewData["Title"] = "UpCredit";
+
+}
+@TempData["number"]
+<br>
+<form asp-action="UpCredit" asp-controller="Home">
+    <label asp-for="Name">Nazwa</label>
+    <input asp-for="Name" placeholder="Nazwa" />
+    <label asp-for="Amount">Kwota</label>
+    <input asp-for="Amount" placeholder="Kwota" />
+    <label asp-for="AmountLeft">Kwota do spłaty</label>
+    <input asp-for="AmountLeft" placeholder="Kwota do spłaty" />
+    <label asp-for="LendingRate">Kwota oprocentowania</label>
+    <input asp-for="LendingRate" placeholder="Kwota oprocentowania" />
+    <input type="submit" />
+</form>
